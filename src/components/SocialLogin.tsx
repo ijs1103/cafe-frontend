@@ -9,10 +9,10 @@ import { useEffect } from "react";
 //   data: { }
 // });
 
-const { Kakao } = window;
+const { kakao } = window;
 const KaKaoLogin = styled.div``;
 const handleKakaoClick = () => {
-    Kakao.Auth.login({
+    kakao.Auth.login({
         success: (res: Object) => {
 
         },
@@ -23,8 +23,8 @@ const handleKakaoClick = () => {
 };
 const SocialLogin = () => {
     useEffect(()=>{
-        Kakao.init(process.env.REACT_APP_KAKAO);
-        console.log(Kakao.isInitialized());
+        kakao.init(process.env.REACT_APP_KAKAO);
+        console.log(kakao.isInitialized());
     }, []);
     return(
         <KaKaoLogin onClick={handleKakaoClick}>

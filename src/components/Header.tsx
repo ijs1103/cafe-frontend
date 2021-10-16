@@ -133,8 +133,6 @@ const BotLi = styled.li<{isHover: boolean, current: boolean}>`
         }
     } 
 `;
-
-const logOut = () => isLoggedInVar(false);
 const Header = () => {
     const isLoggedIn = useReactiveVar(isLoggedInVar);
     const [mouseOn, setMouseOn] = useState(false);

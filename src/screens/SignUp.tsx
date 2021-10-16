@@ -2,11 +2,11 @@ import { gql, useMutation } from "@apollo/client";
 import { useForm } from "react-hook-form";
 import { useLocation, useHistory } from "react-router-dom";
 import {useState, useEffect} from "react";
-import { faTimesCircle, faWindowClose } from "@fortawesome/free-regular-svg-icons";
+import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PageTitle from "../components/PageTitle";
 import { InputDiv, ClearIcon, Input, Label} from "../components/InputElements";
-import { ModalBg, Modal, ModalInner} from "../components/ModalElements";
+import Modal from "../components/ModalElements";
 import InputError from "../components/InputError";
 import AuthLayOut from "../components/AuthLayOut";
 import Button from "../components/Button";
@@ -63,7 +63,7 @@ export default function SignUp() {
         address: string,
         location: string,
     }
-    const { register, handleSubmit, errors, formState, reset, setValue, getValues, setError, clearErrors } = useForm({
+    const { register, handleSubmit, errors, formState, setValue, getValues, setError, clearErrors } = useForm({
         mode: "onChange",
         defaultValues: {
             username: location?.state?.username || "",
@@ -113,14 +113,6 @@ export default function SignUp() {
       setActive(!active);
       setValue("address", "" , {shouldValidate: true});
     };
-    const btnCloseStyle: React.CSSProperties = {
-      position: "absolute",
-      top: "-8%",
-      right: "0",
-      color: "white",
-      cursor: "pointer"
-    };
-    
     const handleComplete = (data: any) => {
         let fullAddress = data.address;
         let extraAddress = ''; 
@@ -189,12 +181,10 @@ export default function SignUp() {
                                      <InputError message={errors?.name?.message}/>
                                  </InputDiv>
                                  <InputDiv>
-                                    {active && <ModalBg active={active}>
-                                    <Modal><ModalInner><FontAwesomeIcon onClick={()=>setActive(!active)} style={btnCloseStyle} icon={faWindowClose} size="2x"/><DaumPostcode onComplete={handleComplete} /></ModalInner></Modal>
-                                    </ModalBg>}
+                                    <Modal active={active} clickHandler={()=>setActive(!active)}><DaumPostcode onComplete={handleComplete} /></Modal>
                                     <div style={{"display": "flex"}}>
                                         <Input ref={register({required: "주소를 선택해주세요."})} type="text" onChange={clearSignUpError} style={{"width": "70%", "borderRadius": "10px 0 0 10px", "fontSize": "13px", "padding": "10px"}} name="address" readOnly />
-                                        <Button style={{"width": "30%", "borderRadius": "0 10px 10px 0"}} onClick={handleClick} value="주소 찾기"/>
+                                        <Button style={{"width": "30%", "borderRadius": "0 10px 10px 0"}} onClick={handleClick} value="주소 찾기" readOnly/>
                                     </div>
                                     <InputError message={errors?.address?.message}/>
                                 </InputDiv>
@@ -204,7 +194,7 @@ export default function SignUp() {
                                      <ClearIcon onClick={()=>{setValue("location", "",{shouldValidate: true});loc_setFocused(false);}} active={loc_filled}><FontAwesomeIcon icon={faTimesCircle} size="lg"/></ClearIcon>
                                      <InputError message={errors?.location?.message}/>
                                  </InputDiv>
-                                 <Button style={{"marginTop": "30px"}}type="submit" value={loading ? "로딩중" : "가입"} disabled={!formState.isValid || loading}></Button>
+                                 <Button style={{"marginTop": "30px"}} type="submit" value={loading ? "로딩중" : "가입"} disabled={!formState.isValid || loading}></Button>
                          </form>
         </AuthLayOut>
         </>

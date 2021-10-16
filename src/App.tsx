@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-d
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./screens/Home";
+import CreateShop from "./screens/CreateShop";
+//import SeeShops from "./screens/SeeShops";
 import Login from "./screens/Login";
 import SignUp from "./screens/SignUp";
 import { client, darkModeVar } from "./apollo";
@@ -22,6 +24,8 @@ function App() {
               <Route path="/" exact component={Home} />
               <Route path="/login" component={Login} />
               <Route path="/signup" component={SignUp} />
+              <Route path="/add" component={CreateShop} />
+              {/* <Route path="/shop/:id" component={SeeShops} /> */}
               <Redirect from="*" to="/" />
             </Switch>
             <Footer />

@@ -71,53 +71,53 @@ const Footer = () => {
     <div>
         <Table>
             <Tul>
-                <Tli style={{"padding": "10px 0"}}><a href="#"><H2>COMPANY</H2></a></Tli>
-                <Tli><a href="#">한눈에 보기</a></Tli>
-                <Tli><a href="#">스타벅스 사명</a></Tli>
-                <Tli><a href="#">국내 뉴스룸</a></Tli>
-                <Tli><a href="#">세계의 스타벅스</a></Tli>
-                <Tli><a href="#">글로벌 뉴스룸</a></Tli>
+                <Tli style={{"padding": "10px 0"}}><H2>COMPANY</H2></Tli>
+                <Tli>한눈에 보기</Tli>
+                <Tli>스타벅스 사명</Tli>
+                <Tli>국내 뉴스룸</Tli>
+                <Tli>세계의 스타벅스</Tli>
+                <Tli>글로벌 뉴스룸</Tli>
             </Tul>
             <Tul>
-                <Tli style={{"padding": "10px 0"}}><a href="#"><H2>CORPORATE SALES</H2></a></Tli>
-                <Tli><a href="#">단체 및 기업 구매 안내</a></Tli>
+                <Tli style={{"padding": "10px 0"}}><H2>CORPORATE SALES</H2></Tli>
+                <Tli>단체 및 기업 구매 안내</Tli>
             </Tul>
             <Tul>
-                <Tli style={{"padding": "10px 0"}}><a href="#"><H2>PARTNERSHIP</H2></a></Tli>
-                <Tli><a href="#">신규 입점 제의</a></Tli>
-                <Tli><a href="#">협력 고객사 등록신청</a></Tli>
+                <Tli style={{"padding": "10px 0"}}><H2>PARTNERSHIP</H2></Tli>
+                <Tli>신규 입점 제의</Tli>
+                <Tli>협력 고객사 등록신청</Tli>
             </Tul>
             <Tul>
-                <Tli style={{"padding": "10px 0"}}><a href="#"><H2>ONLINE COMMUNITY</H2></a></Tli>
-                <Tli><a href="#" target="_blank">페이스북</a></Tli>
-                <Tli><a href="#" target="_blank">트위터</a></Tli>
-                <Tli><a href="#" target="_blank">유튜브</a></Tli>
-                <Tli><a href="#" target="_blank">인스타그램</a></Tli>
+                <Tli style={{"padding": "10px 0"}}><H2>ONLINE COMMUNITY</H2></Tli>
+                <Tli>페이스북</Tli>
+                <Tli>트위터</Tli>
+                <Tli>유튜브</Tli>
+                <Tli>인스타그램</Tli>
             </Tul>
             <Tul>
-                <Tli style={{"padding": "10px 0"}}><a href="#"><H2>RECRUIT</H2></a></Tli>
-                <Tli><a href="#">채용 소개</a></Tli>
-                <Tli><a href="#" target="_blank">채용 지원하기</a></Tli>
+                <Tli style={{"padding": "10px 0"}}><H2>RECRUIT</H2></Tli>
+                <Tli>채용 소개</Tli>
+                <Tli>채용 지원하기</Tli>
             </Tul>
         </Table>
     </div>
     <CopyRight>
         <>
             <Copy>
-                <Cli><a href="#">개인정보처리방침</a></Cli>
-                <Cli><a href="#">영상정보처리기기 운영관리 방침</a></Cli>
-                <Cli><a href="#">홈페이지 이용약관</a></Cli>
-                <Cli><a href="#">위치정보 이용약관</a></Cli>
-                <Cli><a href="#">스타벅스 카드 이용약관</a></Cli>
-                <Cli><a href="#">비회원 이용약관</a></Cli>
-                <Cli><a href="#">My DT Pass 서비스 이용약관</a></Cli>
-                <li style={{"paddingLeft": "10px"}}><a href="#">윤리경영 핫라인</a></li>
+                <Cli>개인정보처리방침</Cli>
+                <Cli>영상정보처리기기 운영관리 방침</Cli>
+                <Cli>홈페이지 이용약관</Cli>
+                <Cli>위치정보 이용약관</Cli>
+                <Cli>스타벅스 카드 이용약관</Cli>
+                <Cli>비회원 이용약관</Cli>
+                <Cli>My DT Pass 서비스 이용약관</Cli>
+                <li style={{"paddingLeft": "10px"}}>윤리경영 핫라인</li>
             </Copy>
         </>
         <Buttons>
-            <a href="#"><Button>찾아오시는 길</Button></a>
-            <a href="#"><Button>신규입점제의</Button></a>
-            <a href="#"><Button>사이트 맵</Button></a>
+            <Button>찾아오시는 길</Button>
+            <Button>신규입점제의</Button>
+            <Button>사이트 맵</Button>
         </Buttons>
         <>
             <Bu>

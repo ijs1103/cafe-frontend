@@ -1,5 +1,4 @@
-import styled, { keyframes, css } from "styled-components";
-import { useState } from "react";
+import styled, { keyframes } from "styled-components";
 import logo from "../assets/logo.png";
 const In = keyframes`
     0% {
@@ -20,7 +19,7 @@ const In = keyframes`
     }
 `;
 
-const Message = styled.div<{isClicked: boolean}>`
+const Message = styled.div`
     z-index: 200;
     position: fixed;
     background-color: #E1DCD9;
@@ -58,16 +57,14 @@ const MessageText = styled.div`
     font-size: 1rem;
     font-weight: 600;
     line-height: 1.5;
-    //margin-right: 100px;
 `;
 interface Imessage{
     message: string | undefined
 }
 const MessageBox: React.FunctionComponent<Imessage> = ({message}) => {
-    const [clicked, setClicked] = useState(false);
     return (
         message === "" || !message ? null :
-        <Message isClicked={clicked} onClick={()=>setClicked(!clicked)}>
+        <Message>
             <Top>
                 <Logo />
                 <Text>스타벅스</Text>

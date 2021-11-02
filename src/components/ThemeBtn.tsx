@@ -18,9 +18,8 @@ const ThemeBtn = styled.div<{isDark: boolean}>`
     width: 146px;
     height: 40px;
     z-index: 99;
-    background-color: ${props => props.isDark ? "#4e4c4c" : "white"};
+    background-color: ${props => props.isDark ? "#4e4c4c" : "#fff"};
     color: ${props => props.theme.fontColor};
-    box-shadow: ${props => !props.isDark && "1px 3px 2px 1px gray"};
     display: flex;
     align-items: center;
     padding-left: 10px;
@@ -30,7 +29,7 @@ const ThemeBtn = styled.div<{isDark: boolean}>`
         ${ThemeTxt}{
             color: ${props => props.isDark ? lightTheme.fontColor : darkTheme.fontColor};
         }
-        background-color: ${props => props.isDark ? "white" : darkTheme.bgColor};
+        background-color: ${props => props.isDark ? "#fff" : darkTheme.bgColor};
     }
 `;
 const TopBtn = styled.div<{isDark: boolean}>`
@@ -44,13 +43,12 @@ const TopBtn = styled.div<{isDark: boolean}>`
     text-align: center;
     z-index: 99;
     cursor: pointer;
-    background-color: ${props => props.isDark ? "#4e4c4c" : "white"};
+    background-color: ${props => props.isDark ? "#4e4c4c" : "#fff"};
     color: ${props => props.theme.fontColor};
     &:hover{
         color: ${props => props.isDark ? "#19CE60" : "#F4D621"};
-        background-color: ${props => props.isDark ? "white" : darkTheme.bgColor};
+        background-color: ${props => props.isDark ? "#fff" : darkTheme.bgColor};
     }
-    box-shadow: ${props => !props.isDark && "1px 3px 2px 1px gray"};
 `;
 const toTheTop = () => {
     document.body.scrollTop = 0;

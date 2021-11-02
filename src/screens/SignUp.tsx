@@ -1,6 +1,6 @@
 import { gql, useMutation } from "@apollo/client";
 import { useForm } from "react-hook-form";
-import { useLocation, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import {useState, useEffect} from "react";
 import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -51,28 +51,18 @@ export default function SignUp() {
     const [loc_focused, loc_setFocused] = useState(false);
     const [loc_filled, loc_setFilled] = useState(false);
     const [active, setActive] = useState(false);
-    const location = useLocation<IuseLocation>();
     const history = useHistory();
 
-    interface IuseLocation{
-        username: string,
-        password: string,
-        checkPw: string,
-        email: string,
-        name: string,
-        address: string,
-        location: string,
-    }
     const { register, handleSubmit, errors, formState, setValue, getValues, setError, clearErrors } = useForm({
         mode: "onChange",
         defaultValues: {
-            username: location?.state?.username || "",
-            password: location?.state?.password || "",
-            checkPw: location?.state?.checkPw || "",
-            email: location?.state?.email || "",
-            name: location?.state?.name || "",
-            address: location?.state?.address || "",
-            location: location?.state?.address || "",
+            username: "",
+            password: "",
+            checkPw: "",
+            email: "",
+            name: "",
+            address: "",
+            location: "",
             result: ""
         },
     });
@@ -128,15 +118,15 @@ export default function SignUp() {
           setValue("address", fullAddress , {shouldValidate: true});
         }    
     };
+    const { username, password, checkPw, email, name, location } = getValues();
     useEffect(()=>{
-        const { username, password, checkPw, email, name, location } = getValues();
         username!=="" ? id_setFilled(true) : id_setFilled(false);
         password!=="" ? pw_setFilled(true) : pw_setFilled(false);
         checkPw!=="" ? checkPw_setFilled(true) : checkPw_setFilled(false);
         email!=="" ? email_setFilled(true) : email_setFilled(false);
         name!=="" ? name_setFilled(true) : name_setFilled(false);
         location!=="" ? loc_setFilled(true) : loc_setFilled(false);
-    },[{...getValues()}]);
+    },[username, password, checkPw, email, name, location]);
 
     return(
         <>

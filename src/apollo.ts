@@ -1,5 +1,8 @@
-import { ApolloClient, createHttpLink, InMemoryCache, makeVar } from "@apollo/client";
+import { ApolloClient, InMemoryCache, makeVar } from "@apollo/client";
+import { onError } from "@apollo/client/link/error";
+import { offsetLimitPagination } from "@apollo/client/utilities";
 import { setContext } from "@apollo/client/link/context";
+import {createUploadLink} from "apollo-upload-client";
 
 const TOKEN = "token";
 const DARK_MODE = "DARK_MODE";
@@ -23,9 +26,9 @@ export const disableDarkMode = () => {
     darkModeVar(false);
 };
 
-const httpLink = createHttpLink({
-    // uri: "http://localhost:5000/graphql",
-    uri: "https://nomadcoffee-backend-ijs1103.herokuapp.com/graphql",
+const httpLink = createUploadLink({
+    uri: "http://localhost:5000/graphql",
+    // uri: "https://nomadcoffee-backend-ijs1103.herokuapp.com/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -36,8 +39,33 @@ const authLink = setContext((_, { headers }) => {
         }
     };
 });
-export const client = new ApolloClient({
-    
-    link: authLink.concat(httpLink),
-    cache: new InMemoryCache(),
+const onErrorLink = onError(({ graphQLErrors, networkError }) => {
+    if (graphQLErrors) {
+      console.log(`GraphQL Error`, graphQLErrors);
+    }
+    if (networkError) {
+      console.log("Network Error", networkError);
+    }
 });
+export const client = new ApolloClient({
+    link: authLink.concat(onErrorLink).concat(httpLink),
+    cache: new InMemoryCache({
+        typePolicies: {
+            Query: {
+                fields: {
+                    seeCoffeeShops: {
+                        ...offsetLimitPagination(),
+                    },
+                    searchShops: {
+                        ...offsetLimitPagination(),
+                    }
+                }
+            }
+        }
+    })
+});
+
+
+ 
+
+  

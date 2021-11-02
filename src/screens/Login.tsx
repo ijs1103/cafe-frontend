@@ -13,6 +13,7 @@ import InputError from "../components/InputError";
 import AuthLayOut from "../components/AuthLayOut";
 import Button from "../components/Button";
 import MessageBox from "../components/MessageBox";
+import SocialLogin from "../components/SocialLogin";
 
 const LoginSavedFindPw = styled.div`
     padding: 20px 0;
@@ -37,15 +38,16 @@ const Span = styled.span`
 `;
 const FindPw = styled.span``;
 const BottomBox = styled.div`
-    padding-top: 20px;
+    padding-top: 10px;
     color: #737373;
     border-top: 1px solid #737373;;
     font-size: 18px;
 `;
 const SignUp = styled.div`
+    margin-top: 5px;
 `;
 const LOGIN_MUTATION = gql`
-    mutation login($username: String!, $password: String!) {
+    mutation login($username: String!, $password: String) {
         login(username: $username, password: $password) {
         ok
         token
@@ -80,7 +82,7 @@ export default function Login() {
         }
         if(token) {
             isChecked ? localStorage.setItem("id", getValues().username) : localStorage.removeItem("id");
-            logUserIn(token)
+            logUserIn(token);
             history.push("/");
         }
     };
@@ -91,11 +93,11 @@ export default function Login() {
         login({variables: {username, password}})
     };
     const clearLoginError = () => clearErrors("result");
+    const { username, password } = getValues();
     useEffect(()=>{
-        const { username, password } = getValues();
         username!=="" ? id_setFilled(true) : id_setFilled(false);
         password!=="" ? pw_setFilled(true) : pw_setFilled(false);
-    },[getValues().username, getValues().password]);
+    },[username, password]);
     return(
         <>
         <MessageBox message={errors?.result?.message} />
@@ -124,6 +126,7 @@ export default function Login() {
                                  </LoginSavedFindPw>
                          </form>
                      <BottomBox>
+                         <SocialLogin />
                          <SignUp>회원이 아직 아니세요? <Link to="/signup"><strong style={{"color": "white"}}>즉시 가입</strong></Link></SignUp>                     
                   </BottomBox>
         </AuthLayOut>

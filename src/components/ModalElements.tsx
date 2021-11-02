@@ -17,8 +17,6 @@ export const Modal = styled.div`
       position: fixed;
       top: 50%;
       left: 50%;
-      width: 400px;
-      height: 400px;
       z-index: 100;
       transform: translate(-50%, -50%);
 `;
@@ -40,9 +38,10 @@ interface Imodal {
 const ModalComponents: React.FunctionComponent<Imodal> = ({ children, active, clickHandler}) => {
   if(!active) return null;
   return(
-    <ModalBg onClick={clickHandler} clicked={active}>
-      <Modal><ModalInner><FontAwesomeIcon onClick={clickHandler} style={btnCloseStyle} icon={faWindowClose} size="2x"/>{children}</ModalInner></Modal>
-    </ModalBg>
+    <>
+    <ModalBg onClick={clickHandler} clicked={active}></ModalBg>
+    <Modal><ModalInner><FontAwesomeIcon onClick={clickHandler} style={btnCloseStyle} icon={faWindowClose} size="2x"/>{children}</ModalInner></Modal>
+    </>
   );
 };
 export default ModalComponents;

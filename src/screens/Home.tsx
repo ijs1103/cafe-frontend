@@ -17,6 +17,7 @@ import rLogo from "../assets/rewardsLogo.png";
 import ThemeSet from "../components/ThemeBtn";
 
 const Container = styled.div`
+    width: 100%;
 `;
 const Main = styled.div`
     height: 646px;

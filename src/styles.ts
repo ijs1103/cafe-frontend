@@ -38,10 +38,13 @@ export const GlobalStyles = createGlobalStyle`
     *{
         box-sizing:border-box;
     }
+    button{
+        all: unset;
+    }
     body{
         font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
         font-size:16px;
-        min-width: 320px;
+        min-width: 600px;
         padding-top:125px;
         overflow-x: hidden;
         background-color: ${props => props.theme.bgColor};

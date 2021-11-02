@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {useHistory} from "react-router-dom";
 import { useState } from "react";
 import { faSearch } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -20,19 +21,22 @@ const Container = styled.div`
     border: solid gray 1px;
 `;
 const Logo = styled.div<{ isClicked: boolean}>`
-    padding: ${props =>  props.isClicked ? "5px" : "0px" };
+    padding: ${props =>  props.isClicked ? "5px" : "5px" };
 `;
-const Form = styled.form``;
 
 const SearchBar = () => {
     const [clicked, setClicked] = useState(false);
     const [searchWord, setSearchWord] = useState("");
+    const history = useHistory();
+    
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
+        if(!clicked) return;
+        // 빈칸을 입력하고 검색하면 캔슬
         if(clicked && searchWord===""){
-            alert("검색어를 입력해주세요.");
+            return;
         }
-        console.log("검색클릭");
+        history.push(`/search/${searchWord}`);
     };
     const handleChange = (event: any) => {
         const {
@@ -40,12 +44,14 @@ const SearchBar = () => {
           } = event;
         setSearchWord(value);
     }
-    console.log(searchWord); 
-    return <Container onClick={() => setClicked(true)}>
-        <Form onSubmit={handleSubmit}><Input value={searchWord} onChange={handleChange} placeholder="통합검색" isClicked={clicked}/></Form>
-        <Logo onClick={handleSubmit}isClicked={clicked}>
-            <FontAwesomeIcon icon={faSearch} size="lg"/>
-        </Logo>
-    </Container>
+    return (
+    <>
+        <Container onClick={() => setClicked(true)}>
+            <form onSubmit={handleSubmit}><Input value={searchWord} onChange={handleChange} placeholder="매장 이름으로 찾기" isClicked={clicked}/></form>
+            <Logo onClick={handleSubmit} isClicked={clicked}>
+                <FontAwesomeIcon icon={faSearch} size="2x"/>
+            </Logo>
+        </Container>
+    </>);
 }
 export default SearchBar;

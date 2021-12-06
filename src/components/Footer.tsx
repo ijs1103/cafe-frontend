@@ -17,6 +17,9 @@ const Tul = styled.ul`
 `;
 const Tli = styled.li`
     padding: 3px 0;
+    &:nth-child(1){
+        padding: 10px 0;
+    }
 `;
 const H2 = styled.span`
     font-size: 15px;
@@ -71,7 +74,7 @@ const Footer = () => {
     <div>
         <Table>
             <Tul>
-                <Tli style={{"padding": "10px 0"}}><H2>COMPANY</H2></Tli>
+                <Tli><H2>COMPANY</H2></Tli>
                 <Tli>한눈에 보기</Tli>
                 <Tli>스타벅스 사명</Tli>
                 <Tli>국내 뉴스룸</Tli>
@@ -79,23 +82,23 @@ const Footer = () => {
                 <Tli>글로벌 뉴스룸</Tli>
             </Tul>
             <Tul>
-                <Tli style={{"padding": "10px 0"}}><H2>CORPORATE SALES</H2></Tli>
+                <Tli><H2>CORPORATE SALES</H2></Tli>
                 <Tli>단체 및 기업 구매 안내</Tli>
             </Tul>
             <Tul>
-                <Tli style={{"padding": "10px 0"}}><H2>PARTNERSHIP</H2></Tli>
+                <Tli><H2>PARTNERSHIP</H2></Tli>
                 <Tli>신규 입점 제의</Tli>
                 <Tli>협력 고객사 등록신청</Tli>
             </Tul>
             <Tul>
-                <Tli style={{"padding": "10px 0"}}><H2>ONLINE COMMUNITY</H2></Tli>
+                <Tli><H2>ONLINE COMMUNITY</H2></Tli>
                 <Tli>페이스북</Tli>
                 <Tli>트위터</Tli>
                 <Tli>유튜브</Tli>
                 <Tli>인스타그램</Tli>
             </Tul>
             <Tul>
-                <Tli style={{"padding": "10px 0"}}><H2>RECRUIT</H2></Tli>
+                <Tli><H2>RECRUIT</H2></Tli>
                 <Tli>채용 소개</Tli>
                 <Tli>채용 지원하기</Tli>
             </Tul>

@@ -77,7 +77,7 @@ const FlipCard = styled.div<{ toggle: boolean }>`
     height: 500px;
     background-color: transparent;
     perspective: 1000px;
-    transform: ${props => props.toggle && "rotateY(360deg)"}; 
+    transform: ${props => props.toggle && "rotateY(360deg)"};
 `;
 const Front = styled.div<{ toggle: boolean }>`
     position: absolute;
@@ -108,6 +108,7 @@ const BackContainer = styled.div`
 `;
 const ImageDiv = styled.div`
     width: 50%;
+    height: 500px;
     padding: 20px;
 `;
 const Image = styled.div<{ bgImage: string }>`
@@ -120,7 +121,8 @@ const Image = styled.div<{ bgImage: string }>`
 `;
 const Category = styled.ul`
     display: flex;
-    margin-top: 10px;
+    margin-top: 5px;
+    flex-wrap: wrap;
 `;
 const Content = styled.div`
     width: 50%;

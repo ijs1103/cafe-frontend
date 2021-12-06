@@ -37,7 +37,7 @@ const CREATE_SHOP_MUTATION = gql`
     mutation createCoffeeShop(
         $name: String!
         $address: String
-        $url: [Upload]
+        $url: Upload
         $categoryName: String!
     ) {
         createCoffeeShop(
@@ -65,7 +65,16 @@ export default function SignUp() {
     const [categories, setCategories] = useState<Icategories[]>([]);
     const history = useHistory();
 
-    const { register, handleSubmit, errors, formState, setValue, getValues, setError, clearErrors } = useForm({mode: "onChange",});
+    const { register, handleSubmit, errors, formState, setValue, getValues, setError, clearErrors } = useForm({
+        mode: "onChange",
+        defaultValues: {
+            name: "",
+            address: "",
+            categoryName: "",
+            result: "",
+            file: null,
+        },
+    });
 
     const onCompleted = (data: any) => {
         const {
@@ -73,11 +82,10 @@ export default function SignUp() {
         } = data;
         if (!ok) {
             setError("result", { message: error });
-            history.push("/add");
+            setValue("name", "");
+            setValue("address", "");
         } else {
-            history.push("/", {
-                message: "카페가 성공적으로 추가 되었습니다.",
-            });
+            history.push("/");
         }
     };
     const [createCoffeeShop, { loading }] = useMutation(CREATE_SHOP_MUTATION, {
@@ -87,12 +95,11 @@ export default function SignUp() {
         if (loading) return;
         let str = "";
         categories.forEach((curr) => str+=curr.payload+" ");
-        console.log(data.img); // filelist 
         createCoffeeShop({
             variables: {
                 name: data.name,
                 categoryName: str,
-                url: data.img,
+                url: data.img[0],
                 address: data.address
             },
         });
@@ -142,7 +149,7 @@ export default function SignUp() {
             <Container>
                 <form onSubmit={handleSubmit(onSubmitValid)}>
                     <InputDiv >
-                        <Input ref={register({ required: "카페명이 비어있습니다.", minLength: { value: 4, message: "카페명은 최소 4글자입니다." } })} onKeyPress={blockEnter} onChange={clearError} type="text"
+                        <Input ref={register({ required: "카페명이 비어있습니다.", minLength: { value: 3, message: "카페명은 최소 3글자입니다." }, maxLength: { value: 9, message: "카페명은 최대 9글자입니다." } })} onKeyPress={blockEnter} onChange={clearError} type="text"
                             focused={name_focused} onFocus={() => name_setFocused(true)} onBlur={() => { !name_filled && name_setFocused(false); }} id="name" name="name" />
                         <Label focused={name_focused} htmlFor="name">카페명</Label>
                         <ClearIcon onClick={() => { setValue("name", "", { shouldValidate: true }); name_setFocused(false); }} active={name_filled} ><FontAwesomeIcon icon={faTimesCircle} size="lg" /></ClearIcon>

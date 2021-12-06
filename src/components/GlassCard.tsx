@@ -12,7 +12,7 @@ const Container = styled.div`
     position: relative;
 `;
 interface Iglasscard{
-    children: any
+    children: React.ReactNode
 }
 const GlassCard: React.FC<Iglasscard> = ({children}) => (<Container>{children}</Container>);
 export default GlassCard;

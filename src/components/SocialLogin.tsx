@@ -54,7 +54,7 @@ const SocialLogin = () => {
         );
     };
     return(
-        <Container><Logo></Logo><KaKaoLogin style={buttonStyle} token="b4114347af38d931248d58b6e34262fd" onSuccess={onSuccess} onFail={console.error} useLoginForm ></KaKaoLogin>
+        <Container><Logo></Logo><KaKaoLogin style={buttonStyle} token={process.env.REACT_APP_KAKAO || ""} onSuccess={onSuccess} onFail={console.error} useLoginForm ></KaKaoLogin>
         </Container>
     );
 };

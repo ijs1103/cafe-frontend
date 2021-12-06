@@ -87,7 +87,6 @@ const Profile = () => {
     const { username } = useParams<{username: string}>();
     const {data: userData } = useUser();
     const {data} = useQuery(SEE_MYSHOPS_QUERY, {variables: {UserId: userData?.me?.id}, skip: tab===2});
-    console.log(userData?.me?.id);
     const {data: myLikesData} = useQuery(SEE_MYLIKES_QUERY, {variables: {userId: userData?.me?.id}, skip: tab===1 });
     return( 
         <ContentLayOut title="마이페이지">

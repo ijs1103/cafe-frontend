@@ -69,10 +69,7 @@ const SeeShops = () =>{
                 offset: currentLength,  
                 limit: LIMIT,
             }
-        }).then(
-            (fetchMoreResult: any) => {
-            }
-        );
+        });
     }, [scrollEnd, data?.seeCoffeeShops, fetchMore]);
     const handleClick = (sorting: string) => {
         refetch({offset: 0, limit: LIMIT, sort: sorting});

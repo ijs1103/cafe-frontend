@@ -1,7 +1,6 @@
 import "styled-components";
 
 declare module 'styled-components'{
-    // DefaultTheme는 키워드다 
     export interface DefaultTheme{
         bgColor: string;
         fontColor: string;

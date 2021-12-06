@@ -4,8 +4,9 @@ import GlassContainer from "./GlassCard";
 import noImage from "../assets/noImage.png";
 import useUser from "./customHook/useUser";
 import { gql, useMutation } from "@apollo/client";
-import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import BtnCategory from "./Btn_Category";
 
 const SHOP_DELETE_MUTATION = gql`
     mutation deleteCoffeeShop($id: Int!){
@@ -84,16 +85,10 @@ const Li = styled.li`
     position: relative;
 `;
 const CatDiv = styled.div`
-    margin-top: 40px;
-    
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
 `;
-const Cat = styled.span`
-    font-size: 24px;
-    color: wheat;
-    width: 80px;
-    margin-left: 10px;
-`;
-
 interface Icardcontainer{
     photos: any;
     id: number;
@@ -140,10 +135,12 @@ const CardContainer: React.FC<Icardcontainer> = ({photos, id, name, user, addres
                                     <Li>{name}</Li>
                                     <Li>{user.username}</Li>
                                     <Li style={{"fontSize": "15px", "lineHeight": "1.4"}}>{address}</Li>
-                                    <CatDiv>{categories[0].name.split(" ").map((category: any, idx: number) => <Cat key={idx}>#{category}</Cat>)}</CatDiv>
+                                    <CatDiv>{categories[0].name.split(" ").map((category: any, idx: number) => {
+                                            return (<BtnCategory key={idx} text={category} />)
+                                    })}</CatDiv>
                                 </Ul>
                             </Lists>
-                            <FontAwesomeIcon onClick={handleDelete} style={{"marginTop": "20px", "float": "right", "cursor": "pointer"}}icon={faTrashAlt} size="2x" />
+                            <FontAwesomeIcon onClick={handleDelete} style={{"position": "absolute", "bottom": "15px","right": "20px", "marginTop": "20px", "float": "right", "cursor": "pointer"}}icon={faTrashAlt} size="2x" />
                         </BackContainer>
                     </Back>
                 </FlipCardInner>

@@ -68,7 +68,6 @@
   "devDependencies": {
     "@types/apollo-upload-client": "^14.1.0"
   },
-  {
   "homepage" : "https://github.com/ijs1103/nomadcoffee-frontend" 
-  }
+  
 }

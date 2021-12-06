@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/ijs1103/nomadcoffee-frontend/static/js/main.01ac2ad8.chunk.js",
-    "main.js.map": "/ijs1103/nomadcoffee-frontend/static/js/main.01ac2ad8.chunk.js.map",
+    "main.js": "/ijs1103/nomadcoffee-frontend/static/js/main.955b6680.chunk.js",
+    "main.js.map": "/ijs1103/nomadcoffee-frontend/static/js/main.955b6680.chunk.js.map",
     "runtime-main.js": "/ijs1103/nomadcoffee-frontend/static/js/runtime-main.ab3a8aa2.js",
     "runtime-main.js.map": "/ijs1103/nomadcoffee-frontend/static/js/runtime-main.ab3a8aa2.js.map",
     "static/js/2.cac0741e.chunk.js": "/ijs1103/nomadcoffee-frontend/static/js/2.cac0741e.chunk.js",
@@ -22,6 +22,6 @@
   "entrypoints": [
     "static/js/runtime-main.ab3a8aa2.js",
     "static/js/2.cac0741e.chunk.js",
-    "static/js/main.01ac2ad8.chunk.js"
+    "static/js/main.955b6680.chunk.js"
   ]
 }

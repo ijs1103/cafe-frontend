@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.js": "/ijs1103/nomadcoffee-frontend/static/js/main.01ac2ad8.chunk.js",
+    "main.js.map": "/ijs1103/nomadcoffee-frontend/static/js/main.01ac2ad8.chunk.js.map",
+    "runtime-main.js": "/ijs1103/nomadcoffee-frontend/static/js/runtime-main.ab3a8aa2.js",
+    "runtime-main.js.map": "/ijs1103/nomadcoffee-frontend/static/js/runtime-main.ab3a8aa2.js.map",
+    "static/js/2.cac0741e.chunk.js": "/ijs1103/nomadcoffee-frontend/static/js/2.cac0741e.chunk.js",
+    "static/js/2.cac0741e.chunk.js.map": "/ijs1103/nomadcoffee-frontend/static/js/2.cac0741e.chunk.js.map",
+    "index.html": "/ijs1103/nomadcoffee-frontend/index.html",
+    "static/js/2.cac0741e.chunk.js.LICENSE.txt": "/ijs1103/nomadcoffee-frontend/static/js/2.cac0741e.chunk.js.LICENSE.txt",
+    "static/media/back2.caa20275.png": "/ijs1103/nomadcoffee-frontend/static/media/back2.caa20275.png",
+    "static/media/coffee1.c5637935.png": "/ijs1103/nomadcoffee-frontend/static/media/coffee1.c5637935.png",
+    "static/media/coffee2.9364e0ce.png": "/ijs1103/nomadcoffee-frontend/static/media/coffee2.9364e0ce.png",
+    "static/media/coffee3.17a69af9.png": "/ijs1103/nomadcoffee-frontend/static/media/coffee3.17a69af9.png",
+    "static/media/kakao.9d8c77db.png": "/ijs1103/nomadcoffee-frontend/static/media/kakao.9d8c77db.png",
+    "static/media/loginBg.5ea29fe8.jpeg": "/ijs1103/nomadcoffee-frontend/static/media/loginBg.5ea29fe8.jpeg",
+    "static/media/logo.b41bd654.png": "/ijs1103/nomadcoffee-frontend/static/media/logo.b41bd654.png",
+    "static/media/main.d17a2e06.jpeg": "/ijs1103/nomadcoffee-frontend/static/media/main.d17a2e06.jpeg",
+    "static/media/noImage.fe8e4f35.png": "/ijs1103/nomadcoffee-frontend/static/media/noImage.fe8e4f35.png",
+    "static/media/rewardsLogo.f55b42b7.png": "/ijs1103/nomadcoffee-frontend/static/media/rewardsLogo.f55b42b7.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ab3a8aa2.js",
+    "static/js/2.cac0741e.chunk.js",
+    "static/js/main.01ac2ad8.chunk.js"
+  ]
+}

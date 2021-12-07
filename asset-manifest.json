@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/ijs1103/nomadcoffee-frontend/static/js/main.955b6680.chunk.js",
-    "main.js.map": "/ijs1103/nomadcoffee-frontend/static/js/main.955b6680.chunk.js.map",
+    "main.js": "/ijs1103/nomadcoffee-frontend/static/js/main.dd85af30.chunk.js",
+    "main.js.map": "/ijs1103/nomadcoffee-frontend/static/js/main.dd85af30.chunk.js.map",
     "runtime-main.js": "/ijs1103/nomadcoffee-frontend/static/js/runtime-main.ab3a8aa2.js",
     "runtime-main.js.map": "/ijs1103/nomadcoffee-frontend/static/js/runtime-main.ab3a8aa2.js.map",
-    "static/js/2.cac0741e.chunk.js": "/ijs1103/nomadcoffee-frontend/static/js/2.cac0741e.chunk.js",
-    "static/js/2.cac0741e.chunk.js.map": "/ijs1103/nomadcoffee-frontend/static/js/2.cac0741e.chunk.js.map",
+    "static/js/2.86041827.chunk.js": "/ijs1103/nomadcoffee-frontend/static/js/2.86041827.chunk.js",
+    "static/js/2.86041827.chunk.js.map": "/ijs1103/nomadcoffee-frontend/static/js/2.86041827.chunk.js.map",
     "index.html": "/ijs1103/nomadcoffee-frontend/index.html",
-    "static/js/2.cac0741e.chunk.js.LICENSE.txt": "/ijs1103/nomadcoffee-frontend/static/js/2.cac0741e.chunk.js.LICENSE.txt",
+    "static/js/2.86041827.chunk.js.LICENSE.txt": "/ijs1103/nomadcoffee-frontend/static/js/2.86041827.chunk.js.LICENSE.txt",
     "static/media/back2.caa20275.png": "/ijs1103/nomadcoffee-frontend/static/media/back2.caa20275.png",
     "static/media/coffee1.c5637935.png": "/ijs1103/nomadcoffee-frontend/static/media/coffee1.c5637935.png",
     "static/media/coffee2.9364e0ce.png": "/ijs1103/nomadcoffee-frontend/static/media/coffee2.9364e0ce.png",
@@ -21,7 +21,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.ab3a8aa2.js",
-    "static/js/2.cac0741e.chunk.js",
-    "static/js/main.955b6680.chunk.js"
+    "static/js/2.86041827.chunk.js",
+    "static/js/main.dd85af30.chunk.js"
   ]
 }

@@ -100,8 +100,9 @@ interface Icardcontainer{
     likes: number;
     commentNumber: number;
     comments: any;
+    deleteButtonOff?: boolean;
 }
-const CardContainer: React.FC<Icardcontainer> = ({photos, id, name, user, address, categories, isLiked, likes, comments, commentNumber}) => {
+const CardContainer: React.FC<Icardcontainer> = ({photos, id, name, user, address, categories, isLiked, likes, comments, commentNumber, deleteButtonOff=false}) => {
     const [toggleOn, setToggleOn] = useState(false);
     const { data: userData } = useUser();
     const deleteUpdate = (cache:any , result: any) => {
@@ -140,7 +141,7 @@ const CardContainer: React.FC<Icardcontainer> = ({photos, id, name, user, addres
                                     })}</CatDiv>
                                 </Ul>
                             </Lists>
-                            <FontAwesomeIcon onClick={handleDelete} style={{"position": "absolute", "bottom": "15px","right": "20px", "marginTop": "20px", "float": "right", "cursor": "pointer"}}icon={faTrashAlt} size="2x" />
+                            {!deleteButtonOff && <FontAwesomeIcon onClick={handleDelete} style={{"position": "absolute", "bottom": "15px","right": "20px", "marginTop": "20px", "float": "right", "cursor": "pointer"}}icon={faTrashAlt} size="2x" />}
                         </BackContainer>
                     </Back>
                 </FlipCardInner>

@@ -43,12 +43,12 @@ const SEE_MYLIKES_QUERY = gql`
                 photos{
                     url
                 }
+                user{
+                    username
+                }
                 likes
                 commentNumber
                 isLiked
-            }
-            user{
-                username
             }
         }
     }
@@ -88,6 +88,7 @@ const Profile = () => {
     const {data: userData } = useUser();
     const {data} = useQuery(SEE_MYSHOPS_QUERY, {variables: {UserId: userData?.me?.id}, skip: tab===2});
     const {data: myLikesData} = useQuery(SEE_MYLIKES_QUERY, {variables: {userId: userData?.me?.id}, skip: tab===1 });
+    console.log(myLikesData);
     return( 
         <ContentLayOut title="마이페이지">
             <Inner>
@@ -99,7 +100,7 @@ const Profile = () => {
             </SubMenu>
             <Grid>
                 {tab===1 ? data?.seeShopById?.map((shop: any, idx: number) => <CardContainer key={idx} {...shop} />)
-                : myLikesData?.seeMyLikes?.map((like: any, idx: number) => like.shop.isLiked && <CardContainer key={idx} user={like.user} {...like.shop}/>)}    
+                : myLikesData?.seeMyLikes?.map((like: any, idx: number) => like.shop.isLiked && <CardContainer key={idx} user={like.user} {...like.shop} deleteButtonOff={true}/>)}    
             </Grid>
             {(data?.seeShopById?.length===0 || myLikesData?.seeMyLikes?.length===0) && <NotFound />}
         </ContentLayOut>

@@ -154,15 +154,15 @@ const Header = () => {
                 <Logo><a href="/"><img src={logo} alt="logo"/></a></Logo>   
                 <TopMenu>
                     <Ul>
-                    <Link to={isLoggedIn ? "/" : "/login"}>{isLoggedIn ? <TopLi onClick={()=>logUserOut()}>로그아웃</TopLi> : <TopLi>로그인</TopLi>}</Link>
+                        <Link to={"/shops"}><TopLi>카페 보기</TopLi></Link>
                         <Link to={`/users/${data?.me?.username}`}><TopLi>마이페이지</TopLi></Link>
+                        <Link to={isLoggedIn ? "/" : "/login"}>{isLoggedIn ? <TopLi onClick={()=>logUserOut()}>로그아웃</TopLi> : <TopLi>로그인</TopLi>}</Link>
                         <Link to={"/add"}><TLi>매장등록</TLi></Link>
                     </Ul>
                     <SearchBar />
                 </TopMenu>
                 <BottomMenu>
                     <Ul>
-                        <BotLi current={1===index} isHover={mouseOn}><Link to={"/shops"}><H2>카페 보기</H2></Link></BotLi>
                         <BotLi current={2===index} isHover={mouseOn} onMouseOver={()=>{setMouseOn(!mouseOn);setIndex(2);}} onMouseOut={()=>setMouseOn(!mouseOn)}><H2>COFFEE</H2>
                             <SubWrapper>
                                 <SubMenu>

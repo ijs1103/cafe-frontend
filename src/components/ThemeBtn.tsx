@@ -7,7 +7,7 @@ import { darkModeVar, disableDarkMode, enableDarkMode } from "../apollo";
 import { useReactiveVar } from "@apollo/client";
 
 const ThemeTxt = styled.span`
-    padding-left: 10px;
+    padding: 10px;
     font-size: 13px;
 `;
 const ThemeBtn = styled.div<{isDark: boolean}>`
@@ -15,7 +15,6 @@ const ThemeBtn = styled.div<{isDark: boolean}>`
     border-radius: 20px;
     right: 78px;
     bottom: 19px;
-    width: 146px;
     height: 40px;
     z-index: 99;
     background-color: ${props => props.isDark ? "#4e4c4c" : "#fff"};

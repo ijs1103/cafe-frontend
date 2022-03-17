@@ -14,6 +14,7 @@ const Inner = styled.div`
     max-width: 1100px;
     height: 100%;
     margin: 0 auto;
+    color: #333333;
 `;
 const Title = styled.h2`
     font-size: 37px;

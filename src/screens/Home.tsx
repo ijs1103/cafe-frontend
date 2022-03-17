@@ -270,7 +270,6 @@ const GiftTxt = styled.div`
 `;
 const GiftBtn = styled.div`
     margin-right: 15px;
-    width: 192px;
     border-radius: 10px;
     border: white solid 2px;
     padding: 7px 20px;

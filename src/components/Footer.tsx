@@ -33,12 +33,12 @@ const CopyRight = styled.div`
     flex-direction: column;
     justify-content: space-between;
 `;
-const Copy = styled.ul`
+const Copy = styled.div`
     display: flex;
     width: 1000px;
     margin: 0 auto;
 `;
-const Cli = styled.li`
+const Cli = styled.a`
     border-right: 0.7px solid ${props => props.theme.fontColor};
     padding: 0 10px;
 `;
@@ -71,7 +71,7 @@ const Reserved = styled.span`
 `;
 const Footer = () => {
     return(<Container>
-    <div>
+    <>
         <Table>
             <Tul>
                 <Tli><H2>COMPANY</H2></Tli>
@@ -103,20 +103,18 @@ const Footer = () => {
                 <Tli>채용 지원하기</Tli>
             </Tul>
         </Table>
-    </div>
+    </>
     <CopyRight>
-        <>
-            <Copy>
-                <Cli>개인정보처리방침</Cli>
-                <Cli>영상정보처리기기 운영관리 방침</Cli>
-                <Cli>홈페이지 이용약관</Cli>
-                <Cli>위치정보 이용약관</Cli>
-                <Cli>스타벅스 카드 이용약관</Cli>
-                <Cli>비회원 이용약관</Cli>
-                <Cli>My DT Pass 서비스 이용약관</Cli>
-                <li style={{"paddingLeft": "10px"}}>윤리경영 핫라인</li>
-            </Copy>
-        </>
+        <Copy>
+            <Cli>개인정보처리방침</Cli>
+            <Cli>영상정보처리기기 운영관리 방침</Cli>
+            <Cli>홈페이지 이용약관</Cli>
+            <Cli>위치정보 이용약관</Cli>
+            <Cli>스타벅스 카드 이용약관</Cli>
+            <Cli>비회원 이용약관</Cli>
+            <Cli>My DT Pass 서비스 이용약관</Cli>
+            <a style={{"paddingLeft": "10px"}}>윤리경영 핫라인</a>
+        </Copy>
         <Buttons>
             <Button>찾아오시는 길</Button>
             <Button>신규입점제의</Button>

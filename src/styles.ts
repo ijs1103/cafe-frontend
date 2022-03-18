@@ -42,6 +42,7 @@ export const GlobalStyles = createGlobalStyle`
         all: unset;
     }
     body{
+        height: 100vh;
         font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
         font-size:16px;
         min-width: 600px;

@@ -59,6 +59,7 @@ const Title = styled.h1`
 `;
 
 const Grid = styled.div`
+    margin-top: 50px;
     display: grid;
     grid-template-columns: repeat(3, minmax(300px, 1fr));
     grid-gap: 30px;
@@ -69,6 +70,7 @@ const Inner = styled.div`
     padding-bottom: 10px;
 `;
 const SubMenu = styled.div`
+    margin-top: 30px;
     display: flex;
     justify-content: center;
     color: gray;

@@ -34,8 +34,8 @@ font-size: 32px;
 font-weight: 700;
 `;
 interface Iauthlayout{
-    title: string,
-    children: any
+        title: string,
+        children: any
 }
 const AuthLayOut: React.FunctionComponent<Iauthlayout> = ({ title, children }) =>
         <Container>

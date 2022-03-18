@@ -56,6 +56,11 @@ const SortLikes = styled.span`
         color: yellow;
     }
 `;
+const Cards = styled.div`
+    margin-top: 30px;
+    display: grid;
+    gap: 30px;
+`;
 const SeeShops = () =>{
     const LIMIT = 5;
     const RECENT = "recent";
@@ -84,7 +89,9 @@ const SeeShops = () =>{
                     <SortTime onClick={()=>handleClick(RECENT)}><FontAwesomeIcon style={{"marginRight": "10px"}} icon={faSort} />최신순</SortTime>
                     <SortLikes onClick={()=>handleClick("name")}><FontAwesomeIcon style={{"marginRight": "10px"}} icon={faSort} />이름순</SortLikes>
                 </SortDiv>
-                {data?.seeCoffeeShops?.map((shop: any) => <Card key={shop.id} {...shop} />)}
+                <Cards>
+                    {data?.seeCoffeeShops?.map((shop: any) => <Card key={shop.id} {...shop} />)}
+                </Cards>
                 {loading && <Loader />}
             </ContentLayOut>
         </>

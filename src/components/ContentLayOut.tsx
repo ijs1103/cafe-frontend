@@ -9,9 +9,10 @@ const Container = styled.div<{bgColor?: string}>`
 `;
 const Inner = styled.div`
     padding: 50px 0;
-    display: grid;
-    grid-gap: 50px;
+    /* display: grid;
+    grid-gap: 50px; */
     width: 1100px;
+    min-height: 1000px;
     margin: 0 auto;
 `;
 const ContentLayOut: React.FC<{children: React.ReactNode, title: string, bgColor?: string}> = ({children, title, bgColor}) => {

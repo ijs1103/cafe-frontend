@@ -35,7 +35,7 @@ const CopyRight = styled.div`
 `;
 const Copy = styled.div`
     display: flex;
-    width: 1000px;
+    min-width: 1000px;
     margin: 0 auto;
 `;
 const Cli = styled.a`

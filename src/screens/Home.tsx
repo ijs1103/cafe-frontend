@@ -272,7 +272,7 @@ const GiftBtn = styled.div`
     margin-right: 15px;
     border-radius: 10px;
     border: white solid 2px;
-    padding: 7px 20px;
+    padding: 7px 10px;
     height: 38px;
     cursor: pointer;
     &:hover{

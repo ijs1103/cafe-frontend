@@ -144,7 +144,7 @@ export default function SignUp() {
     }, [name, categoryName]);
 
     return (
-        <ContentLayOut title="매장 등록" bgColor="#636566">
+        <ContentLayOut title="매장 등록" bgColor="#524a3f">
             <MessageBox message={errors?.result?.message} />
             <Container>
                 <form onSubmit={handleSubmit(onSubmitValid)}>

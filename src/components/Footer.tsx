@@ -113,7 +113,7 @@ const Footer = () => {
             <Cli>스타벅스 카드 이용약관</Cli>
             <Cli>비회원 이용약관</Cli>
             <Cli>My DT Pass 서비스 이용약관</Cli>
-            <a style={{"paddingLeft": "10px"}}>윤리경영 핫라인</a>
+            <a href="#none" style={{"paddingLeft": "10px"}}>윤리경영 핫라인</a>
         </Copy>
         <Buttons>
             <Button>찾아오시는 길</Button>
